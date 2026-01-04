@@ -345,7 +345,7 @@ export function BirthdayInvitation() {
             <div className="p-6 sm:p-8">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl sm:text-3xl font-extrabold" style={{ ...displayFont, color: TEXT_DARK }}>
-                  Presentes
+                  Sugestões de Presentes
                 </h2>
                 <Gift className="w-7 h-7 anim-float" style={{ color: ACCENT_LILAC }} />
               </div>
