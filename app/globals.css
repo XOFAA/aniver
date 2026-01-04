@@ -1,0 +1,624 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.98 0.01 260);
+  --foreground: oklch(0.25 0.05 270);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.25 0.05 270);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.55 0.15 260);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.75 0.08 70);
+  --secondary-foreground: oklch(0.99 0 0);
+  --muted: oklch(0.96 0.02 260);
+  --muted-foreground: oklch(0.55 0.05 270);
+  --accent: oklch(0.85 0.05 330);
+  --accent-foreground: oklch(0.3 0.05 270);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.88 0.03 260);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.55 0.15 260);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 1.5rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* Atualizando variáveis de fonte para as novas fontes infantis */
+  --font-sans: "Poppins", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animações completamente redesenhadas e únicas para cada elemento */
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 0.4;
+    transform: scale(0.8) rotate(90deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3) rotate(180deg);
+  }
+  75% {
+    opacity: 0.6;
+    transform: scale(0.9) rotate(270deg);
+  }
+}
+
+@keyframes sparkle-rotate {
+  0% {
+    opacity: 0.8;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.4) rotate(180deg);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@keyframes float-sparkle {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.7;
+  }
+  33% {
+    transform: translateY(-15px) translateX(10px) scale(1.2);
+    opacity: 1;
+  }
+  66% {
+    transform: translateY(-25px) translateX(-5px) scale(0.9);
+    opacity: 0.8;
+  }
+}
+
+@keyframes glass-slipper {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-30px) translateX(20px) rotate(-5deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-50px) translateX(30px) rotate(10deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-35px) translateX(15px) rotate(-8deg);
+    opacity: 0.45;
+  }
+}
+
+@keyframes carriage-float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.25;
+  }
+  25% {
+    transform: translate(-30px, -25px) rotate(-3deg);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(-50px, -40px) rotate(2deg);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translate(-35px, -30px) rotate(-2deg);
+    opacity: 0.32;
+  }
+}
+
+@keyframes float-hearts {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-40px) scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+@keyframes crown-bounce {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+@keyframes crown-spin-slow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes crown-float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(-5deg);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-5px) rotate(0deg);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes number-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.2) rotate(5deg);
+  }
+  80% {
+    transform: scale(0.95) rotate(-2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes photo-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-20deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes photo-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes card-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes details-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Adicionando animações únicas para os personagens da Cinderela */
+
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0.4;
+  }
+  33% {
+    transform: translateY(-20px) translateX(8px) rotate(2deg);
+    opacity: 0.6;
+  }
+  66% {
+    transform: translateY(-35px) translateX(-8px) rotate(-2deg);
+    opacity: 0.5;
+  }
+}
+
+@keyframes fairy-float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translateY(-25px) translateX(15px) rotate(3deg) scale(1.05);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-45px) translateX(25px) rotate(-3deg) scale(1.1);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateY(-30px) translateX(10px) rotate(2deg) scale(1.05);
+    opacity: 0.6;
+  }
+}
+
+@keyframes mouse-bounce {
+  0%,
+  100% {
+    transform: translateY(0px) scaleY(1) scaleX(1);
+    opacity: 0.6;
+  }
+  15% {
+    transform: translateY(-8px) scaleY(1.1) scaleX(0.95);
+    opacity: 0.8;
+  }
+  30% {
+    transform: translateY(-25px) scaleY(0.95) scaleX(1.05);
+    opacity: 1;
+  }
+  45% {
+    transform: translateY(-15px) scaleY(1.05) scaleX(0.98);
+    opacity: 0.9;
+  }
+  60% {
+    transform: translateY(-5px) scaleY(1) scaleX(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes birds-fly {
+  0% {
+    transform: translateX(-100px) translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  25% {
+    transform: translateX(25vw) translateY(-15px) rotate(2deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(50vw) translateY(-30px) rotate(-2deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateX(75vw) translateY(-20px) rotate(1deg);
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px)) translateY(-10px) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+/* Classes de animação aplicadas */
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-sparkle-rotate {
+  animation: sparkle-rotate 4s ease-in-out infinite;
+}
+
+.animate-float-sparkle {
+  animation: float-sparkle 5s ease-in-out infinite;
+}
+
+.animate-glass-slipper {
+  animation: glass-slipper 10s ease-in-out infinite;
+}
+
+.animate-carriage-float {
+  animation: carriage-float 12s ease-in-out infinite;
+}
+
+.animate-float-hearts {
+  animation: float-hearts 6s ease-in-out infinite;
+}
+
+.animate-crown-bounce {
+  animation: crown-bounce 2.5s ease-in-out infinite;
+}
+
+.animate-crown-spin-slow {
+  animation: crown-spin-slow 25s linear infinite;
+}
+
+.animate-crown-float {
+  animation: crown-float 4s ease-in-out infinite;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.8s ease-out forwards;
+}
+
+.animate-fade-scale {
+  animation: fade-scale 1s ease-out forwards;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 1.2s ease-out forwards;
+}
+
+.animate-gradient-flow {
+  background-size: 200% 200%;
+  animation: gradient-flow 8s ease infinite;
+}
+
+.animate-number-pop {
+  animation: number-pop 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-photo-reveal {
+  animation: photo-reveal 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.animate-photo-float {
+  animation: photo-float 4s ease-in-out infinite;
+}
+
+.animate-card-entrance {
+  animation: card-entrance 1s ease-out forwards;
+}
+
+.animate-wiggle {
+  animation: wiggle 1.5s ease-in-out infinite;
+}
+
+.animate-details-reveal {
+  animation: details-reveal 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 2s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out forwards;
+}
+
+/* Adicionando classes para as novas animações dos personagens */
+
+.animate-float-gentle {
+  animation: float-gentle 12s ease-in-out infinite;
+}
+
+.animate-fairy-float {
+  animation: fairy-float 15s ease-in-out infinite;
+}
+
+.animate-mouse-bounce {
+  animation: mouse-bounce 3s ease-in-out infinite;
+}
+
+.animate-birds-fly {
+  animation: birds-fly 20s linear infinite;
+}
