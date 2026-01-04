@@ -31,16 +31,17 @@ export const metadata: Metadata = {
     apple: "/apple-icon.png",
   },
 
-  // ✅ ISSO AQUI é o que faz aparecer imagem no WhatsApp
-  metadataBase: new URL("https://mavie.82.25.77.195.sslip.io"),
+  // ✅ DOMÍNIO CERTO
+  metadataBase: new URL("https://mavie.gdelivery.app.br"),
+
   openGraph: {
     title: "Aniversário da Mavie 🎀 2 Anos",
     description: "Convite de aniversário da Mavie - Tema Cinderela",
-    url: "https://mavie.82.25.77.195.sslip.io",
+    url: "https://mavie.gdelivery.app.br",
     siteName: "Aniversário da Mavie",
     images: [
       {
-        url: "/mavie-foto.jpg",
+        url: "/mavie-foto.jpg", // ou melhor: /cinderela-capa.jpg (1200x630)
         width: 1200,
         height: 630,
         alt: "Convite de aniversário da Mavie",
@@ -49,6 +50,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Aniversário da Mavie 🎀 2 Anos",
@@ -56,6 +58,7 @@ export const metadata: Metadata = {
     images: ["/mavie-foto.jpg"],
   },
 }
+
 
 
 export default function RootLayout({
