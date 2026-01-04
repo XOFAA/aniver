@@ -31,49 +31,111 @@ export function BirthdayInvitation() {
       {/* Animations (CSS) */}
       <style jsx global>{`
         @keyframes floaty {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-          100% { transform: translateY(0px); }
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
         }
         @keyframes sparkleRotate {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
         }
         @keyframes crownBounce {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
         }
         @keyframes pulseGlow {
-          0%, 100% { opacity: 0.55; filter: blur(28px); }
-          50% { opacity: 0.9; filter: blur(34px); }
+          0%,
+          100% {
+            opacity: 0.55;
+            filter: blur(28px);
+          }
+          50% {
+            opacity: 0.9;
+            filter: blur(34px);
+          }
         }
         @keyframes fadeUp {
-          0% { opacity: 0; transform: translateY(14px); }
-          100% { opacity: 1; transform: translateY(0px); }
+          0% {
+            opacity: 0;
+            transform: translateY(14px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0px);
+          }
         }
         @keyframes fadeScale {
-          0% { opacity: 0; transform: scale(0.98); }
-          100% { opacity: 1; transform: scale(1); }
+          0% {
+            opacity: 0;
+            transform: scale(0.98);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
         }
         @keyframes photoReveal {
-          0% { opacity: 0; transform: scale(0.92); }
-          100% { opacity: 1; transform: scale(1); }
+          0% {
+            opacity: 0;
+            transform: scale(0.92);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
         }
 
-        .anim-fade-up { animation: fadeUp 700ms ease-out both; }
-        .anim-fade-scale { animation: fadeScale 700ms ease-out both; }
-        .anim-photo { animation: photoReveal 750ms cubic-bezier(.2,.8,.2,1) both; }
+        .anim-fade-up {
+          animation: fadeUp 700ms ease-out both;
+        }
+        .anim-fade-scale {
+          animation: fadeScale 700ms ease-out both;
+        }
+        .anim-photo {
+          animation: photoReveal 750ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        }
 
-        .anim-sparkle { animation: sparkleRotate 10s linear infinite; }
-        .anim-crown { animation: crownBounce 1.3s ease-in-out infinite; }
-        .anim-float { animation: floaty 3.5s ease-in-out infinite; }
-        .anim-glow { animation: pulseGlow 2.2s ease-in-out infinite; }
+        .anim-sparkle {
+          animation: sparkleRotate 10s linear infinite;
+        }
+        .anim-crown {
+          animation: crownBounce 1.3s ease-in-out infinite;
+        }
+        .anim-float {
+          animation: floaty 3.5s ease-in-out infinite;
+        }
+        .anim-glow {
+          animation: pulseGlow 2.2s ease-in-out infinite;
+        }
 
         /* Stagger helper */
-        .stagger-1 { animation-delay: 80ms; }
-        .stagger-2 { animation-delay: 160ms; }
-        .stagger-3 { animation-delay: 240ms; }
-        .stagger-4 { animation-delay: 320ms; }
+        .stagger-1 {
+          animation-delay: 80ms;
+        }
+        .stagger-2 {
+          animation-delay: 160ms;
+        }
+        .stagger-3 {
+          animation-delay: 240ms;
+        }
+        .stagger-4 {
+          animation-delay: 320ms;
+        }
       `}</style>
 
       {/* Background */}
@@ -105,74 +167,73 @@ export function BirthdayInvitation() {
 
       <div className="mx-auto w-full max-w-6xl px-4 pt-8 pb-28 sm:pb-12 sm:pt-12">
         {/* HERO */}
-        <section className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <section className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
           {/* Left */}
-          <div className="order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 rounded-full border bg-white/70 px-4 py-2 shadow-sm backdrop-blur-md anim-fade-up">
-              <Sparkles className="w-4 h-4 anim-sparkle" style={{ color: ACCENT_CORAL }} />
-              <span className="text-sm font-semibold" style={{ color: TEXT_MID }}>
-                Convite oficial do Reino ✨
-              </span>
-            </div>
+          <div className="order-2 lg:order-1 lg:pr-6">
+            <div className="max-w-xl lg:max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full border bg-white/70 px-4 py-2 shadow-sm backdrop-blur-md anim-fade-up">
+                <Sparkles className="w-4 h-4 anim-sparkle" style={{ color: ACCENT_CORAL }} />
+                <span className="text-sm font-semibold" style={{ color: TEXT_MID }}>
+                  Convite oficial do Reino ✨
+                </span>
+              </div>
 
-            <h1
-              className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05] tracking-tight anim-fade-scale stagger-1"
-              style={{
-                ...displayFont,
-                color: TEXT_DARK,
-                textShadow: "0 2px 18px rgba(255,255,255,0.95)",
-              }}
-            >
-              Você está convidado(a) para o
-              <span
-                className="block mt-2 text-transparent bg-clip-text"
+              <h1
+                className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight anim-fade-scale stagger-1"
                 style={{
-                  backgroundImage: `linear-gradient(90deg, ${PRIMARY_DARK}, ${ACCENT_LILAC}, ${ACCENT_CORAL})`,
+                  ...displayFont,
+                  color: TEXT_DARK,
+                  textShadow: "0 2px 18px rgba(255,255,255,0.95)",
                 }}
               >
-                aniversário da Mavie
-              </span>
-            </h1>
-
-            <p
-              className="mt-4 text-base sm:text-lg font-medium leading-relaxed anim-fade-up stagger-2"
-              style={{ color: TEXT_MID }}
-            >
-              Um baile encantado para celebrar <b style={{ color: TEXT_DARK }}>2 aninhos</b> com muita magia, coroas e
-              sorrisos. 💖
-            </p>
-
-    
-
-            {/* CTA desktop */}
-            <div className="mt-7 hidden sm:flex items-center gap-3 anim-fade-up stagger-4">
-              <a href="https://wa.link/bct4k0" target="_blank" rel="noopener noreferrer">
-                <Button
-                  size="lg"
-                  className="rounded-2xl px-8 py-7 text-lg font-extrabold shadow-2xl border-2"
+                Você está convidado(a) para o
+                <span
+                  className="block mt-2 text-transparent bg-clip-text"
                   style={{
-                    backgroundImage: `linear-gradient(90deg, ${PRIMARY_DARK}, ${PRIMARY})`,
-                    borderColor: "rgba(255,255,255,0.85)",
-                    color: "white",
+                    backgroundImage: `linear-gradient(90deg, ${PRIMARY_DARK}, ${ACCENT_LILAC}, ${ACCENT_CORAL})`,
                   }}
                 >
-                  <MessageCircle className="w-6 h-6 mr-2" />
-                  Confirmar presença
-                </Button>
-              </a>
-
-              <div className="flex items-center gap-2">
-                <Crown className="w-6 h-6 anim-crown" style={{ color: GOLD_SOFT }} />
-                <span className="text-sm font-semibold" style={{ color: TEXT_MID }}>
-                  Clique e confirme rapidinho no WhatsApp
+                  aniversário da Mavie
                 </span>
+              </h1>
+
+              <p
+                className="mt-4 text-base sm:text-lg lg:text-xl font-medium leading-relaxed anim-fade-up stagger-2"
+                style={{ color: TEXT_MID }}
+              >
+                Um baile encantado para celebrar <b style={{ color: TEXT_DARK }}>2 aninhos</b> de alegria, brilho e magia. ✨
+              </p>
+
+              {/* CTA desktop */}
+              <div className="mt-7 hidden sm:flex flex-wrap items-center gap-4 anim-fade-up stagger-4">
+                <a href="https://wa.link/bct4k0" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="lg"
+                    className="rounded-2xl px-8 py-7 text-lg font-extrabold shadow-2xl border-2"
+                    style={{
+                      backgroundImage: `linear-gradient(90deg, ${PRIMARY_DARK}, ${PRIMARY})`,
+                      borderColor: "rgba(255,255,255,0.85)",
+                      color: "white",
+                    }}
+                  >
+                    <MessageCircle className="w-6 h-6 mr-2" />
+                    Confirmar presença
+                  </Button>
+                </a>
+
+                <div className="flex items-center gap-2">
+                  <Crown className="w-6 h-6 anim-crown" style={{ color: GOLD_SOFT }} />
+                  <span className="text-sm font-semibold max-w-[260px] leading-snug" style={{ color: TEXT_MID }}>
+                    Clique e confirme rapidinho no WhatsApp
+                  </span>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Right: Foto circular (como antes) */}
+          {/* Right: Foto circular */}
           <div className="order-1 lg:order-2 flex justify-center">
-            <div className="relative w-full max-w-[420px] anim-photo">
+            <div className="relative w-full max-w-[520px] anim-photo">
               {/* Glow */}
               <div
                 className="absolute -inset-10 rounded-full opacity-70 anim-glow"
@@ -188,7 +249,7 @@ export function BirthdayInvitation() {
               />
 
               {/* Foto */}
-              <div className="relative mx-auto w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] lg:w-[380px] lg:h-[380px]">
+              <div className="relative mx-auto w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] lg:w-[440px] lg:h-[440px]">
                 <div
                   className="absolute inset-0 rounded-full border-8 shadow-2xl bg-white"
                   style={{ borderColor: "rgba(255,255,255,0.92)" }}
@@ -197,7 +258,7 @@ export function BirthdayInvitation() {
                   <Image src="/mavie-foto.jpg" alt="Mavie" fill className="object-cover" priority />
                 </div>
 
-                {/* Ícones animados (como antes) */}
+                {/* Ícones animados */}
                 <Crown
                   className="absolute -top-6 -right-5 w-16 h-16 sm:w-20 sm:h-20 drop-shadow-2xl anim-crown"
                   style={{ color: GOLD_SOFT }}
@@ -208,8 +269,8 @@ export function BirthdayInvitation() {
                 />
               </div>
 
-              {/* Badges (flutuando de leve) */}
-              <div className="mt-6 flex items-center justify-center gap-3 anim-float">
+              {/* Badges */}
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3 anim-float">
                 <Badge text="✨ Baile encantado" tone={PRIMARY_SOFT} color={TEXT_DARK} />
                 <Badge text="👑 Princesas & príncipes" tone={"rgba(255,232,163,0.45)"} color={TEXT_DARK} />
               </div>
@@ -218,7 +279,7 @@ export function BirthdayInvitation() {
         </section>
 
         {/* Conteúdo */}
-        <section className="mt-10 grid lg:grid-cols-3 gap-6">
+        <section className="mt-10 grid lg:grid-cols-2 gap-6 items-start">
           {/* Detalhes do evento */}
           <Card className="rounded-3xl border bg-white/80 backdrop-blur-md shadow-xl overflow-hidden anim-fade-up">
             <div
@@ -227,10 +288,10 @@ export function BirthdayInvitation() {
             />
             <div className="p-6 sm:p-8">
               <h2 className="text-2xl sm:text-3xl font-extrabold" style={{ ...displayFont, color: TEXT_DARK }}>
-              Grande Baile
+                Grande Baile
               </h2>
 
-              <div className="mt-6 grid sm:grid-cols-3 gap-4">
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4">
                 <DetailCard
                   title="Data"
                   value="24 de Janeiro"
@@ -406,7 +467,7 @@ function DetailCard({
 }) {
   return (
     <div
-      className={`rounded-3xl border p-5 shadow-sm ${
+      className={`rounded-3xl border p-5 lg:p-6 shadow-sm ${
         clickable ? "hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer" : ""
       }`}
       style={{ backgroundImage: bg, borderColor: border }}
@@ -416,7 +477,7 @@ function DetailCard({
           <p className="text-sm font-bold" style={{ color: textMid }}>
             {title}
           </p>
-          <p className="text-xl font-extrabold mt-1" style={{ color: textDark }}>
+          <p className="text-xl lg:text-2xl font-extrabold mt-1" style={{ color: textDark }}>
             {value}
           </p>
           <p className="text-sm font-semibold mt-1" style={{ color: textMid }}>
