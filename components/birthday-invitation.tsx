@@ -150,7 +150,7 @@ export function BirthdayInvitation() {
 
       {/* CTA fixo mobile */}
       <div className="fixed bottom-3 left-0 right-0 z-50 px-4 sm:hidden">
-        <a href="https://wa.link/bct4k0" target="_blank" rel="noopener noreferrer" className="block">
+        <a href="https://w.app/mavie2anos" target="_blank" rel="noopener noreferrer" className="block">
           <Button
             className="w-full rounded-2xl py-6 text-lg font-extrabold shadow-2xl border-2"
             style={{
@@ -201,12 +201,12 @@ export function BirthdayInvitation() {
                 className="mt-4 text-base sm:text-lg lg:text-xl font-medium leading-relaxed anim-fade-up stagger-2"
                 style={{ color: TEXT_MID }}
               >
-                Um baile encantado para celebrar <b style={{ color: TEXT_DARK }}>2 aninhos</b> de alegria, brilho e magia. ✨
+                Um baile encantado para celebrar <b style={{ color: TEXT_DARK }}>2 aninhos</b> da nossa cinderela.✨
               </p>
 
               {/* CTA desktop */}
               <div className="mt-7 hidden sm:flex flex-wrap items-center gap-4 anim-fade-up stagger-4">
-                <a href="https://wa.link/bct4k0" target="_blank" rel="noopener noreferrer">
+                <a href="https://w.app/mavie2anos" target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     className="rounded-2xl px-8 py-7 text-lg font-extrabold shadow-2xl border-2"
@@ -290,7 +290,18 @@ export function BirthdayInvitation() {
               <h2 className="text-2xl sm:text-3xl font-extrabold" style={{ ...displayFont, color: TEXT_DARK }}>
                 Grande Baile
               </h2>
-
+              <div className="mt-4">
+                <DetailCard
+                  title="Traje"
+                  value="Roupa Social"
+                  subtitle="Vista-se para o baile ✨"
+                  icon={<Crown className="w-6 h-6" style={{ color: GOLD_SOFT }} />}
+                  bg={`linear-gradient(135deg, rgba(255,232,163,0.20), rgba(255,255,255,0.60))`}
+                  border={"rgba(255,232,163,0.55)"}
+                  textDark={TEXT_DARK}
+                  textMid={TEXT_MID}
+                />
+              </div>
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4">
                 <DetailCard
                   title="Data"
@@ -350,9 +361,7 @@ export function BirthdayInvitation() {
                 <Gift className="w-7 h-7 anim-float" style={{ color: ACCENT_LILAC }} />
               </div>
 
-              <p className="mt-3 text-sm sm:text-base font-medium leading-relaxed" style={{ color: TEXT_MID }}>
-                Sua presença é o mais importante 💝 — mas se quiser trazer algo, aqui vão sugestões:
-              </p>
+
 
               <div className="mt-5 space-y-3">
                 <GiftRow emoji="👗" title="Roupas" desc="Tam 2 anos / 3 anos" accent={ACCENT_CORAL} textMid={TEXT_MID} />
@@ -366,13 +375,14 @@ export function BirthdayInvitation() {
                 <GiftRow
                   emoji="💳"
                   title="Cartão presente"
-                  desc="Renner / Riachuelo / Carter’s / RI Happy / JM Baby Store"
+                  desc="Renner / Riachuelo / Carter’s / RI Happy "
                   accent={ACCENT_LILAC}
                   textMid={TEXT_MID}
                 />
               </div>
 
               <div
+
                 className="mt-6 rounded-2xl border p-4 text-center font-extrabold anim-fade-scale"
                 style={{
                   borderColor: "rgba(83,236,236,0.35)",
@@ -380,7 +390,10 @@ export function BirthdayInvitation() {
                   color: TEXT_DARK,
                 }}
               >
-                💝 Sua presença é o nosso maior presente!
+                <a href="https://www.google.com/maps/dir/Rua+Cruzeiro+do+Sul,+1441+-+Compensa,+Manaus+-+AM/R.+Paxi%C3%BAbas,+08+-+loja+01+-+Dom+Pedro,+Manaus+-+AM,+69040-330/@-3.0980647,-60.0616049,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x926c102877e9701d:0x74f0f8d70587fe00!2m2!1d-60.0606956!2d-3.1027853!1m5!1m1!1s0x926c1132cc968d2f:0xe569b0ff5ec7a2f!2m2!1d-60.0391543!2d-3.0898738?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">
+                  📍Loja JM BABY STORY
+                </a>
+
               </div>
             </div>
           </Card>
@@ -422,9 +435,8 @@ function InfoPill({
 }) {
   return (
     <div
-      className={`rounded-2xl border bg-white/78 backdrop-blur-md px-4 py-3 shadow-sm ${
-        clickable ? "hover:shadow-md hover:-translate-y-0.5 transition-all" : ""
-      }`}
+      className={`rounded-2xl border bg-white/78 backdrop-blur-md px-4 py-3 shadow-sm ${clickable ? "hover:shadow-md hover:-translate-y-0.5 transition-all" : ""
+        }`}
       style={{ borderColor: "rgba(255,255,255,0.75)" }}
     >
       <div className="flex items-center gap-3">
@@ -467,9 +479,8 @@ function DetailCard({
 }) {
   return (
     <div
-      className={`rounded-3xl border p-5 lg:p-6 shadow-sm ${
-        clickable ? "hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer" : ""
-      }`}
+      className={`rounded-3xl border p-5 lg:p-6 shadow-sm ${clickable ? "hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer" : ""
+        }`}
       style={{ backgroundImage: bg, borderColor: border }}
     >
       <div className="flex items-start justify-between gap-3">
